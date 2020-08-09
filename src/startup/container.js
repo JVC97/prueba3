@@ -8,8 +8,9 @@ const app = require(".");
 const {
   HomeService,
   UserService,
-  IdeaService,
-  CommentService,
+  PacienteService,
+  ProtesisService,
+  VisitaService,
   AuthService
 } = require("../services");
 
@@ -17,8 +18,9 @@ const {
 const {
   HomeController,
   UserController,
-  IdeaController,
-  CommentController,
+  PacienteController,
+  ProtesisController,
+  VisitaController,
   AuthController
 } = require("../controllers");
 
@@ -54,18 +56,18 @@ container
   .register({
     HomeService: asClass(HomeService).singleton(),
     UserService: asClass(UserService).singleton(),
-    CommentService: asClass(CommentService).singleton(),
-    IdeaService: asClass(IdeaService).singleton(),
+    PacienteService: asClass(PacienteService).singleton(),
+    ProtesisService: asClass(ProtesisService).singleton(),
+    VisitaService: asClass(VisitaService).singleton(),
     AuthService: asClass(AuthService).singleton()
   })
   .register({
     HomeController: asClass(HomeController.bind(HomeController)).singleton(),
     UserController: asClass(UserController.bind(UserController)).singleton(),
-    IdeaController: asClass(IdeaController.bind(IdeaController)).singleton(),
+    PacienteController: asClass(PacienteController.bind(PacienteController)).singleton(),
     AuthController: asClass(AuthController.bind(AuthController)).singleton(),
-    CommentController: asClass(
-      CommentController.bind(CommentController)
-    ).singleton()
+    ProtesisController: asClass(ProtesisController.bind(ProtesisController)).singleton(),
+    VisitaController: asClass(VisitaController.bind(VisitaController)).singleton()
   })
   .register({
     HomeRoutes: asFunction(HomeRoutes).singleton(),
