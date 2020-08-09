@@ -1,5 +1,6 @@
 module.exports = {
   User: require("./user.model"),
-  Idea: require("./idea.model"),
-  Comment: require("./comment.model")
+  Paciente: require("./paciente.models"),
+  Protesis: require("./protesis.model"),
+  Visita: require("./visita.model")
 };

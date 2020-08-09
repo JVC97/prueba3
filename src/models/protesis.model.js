@@ -1,21 +1,20 @@
 const mongoose = require("mongoose");
 const { Schema } = mongoose;
 
-const IdeaSchema = new Schema({
-  idea: { type: String, required: true },
-  description: { type: String },
-  upvotes: [{ type: Boolean }],
-  downvotes: [{ type: Boolean }],
-  author: {
+const ProtesisSchema = new Schema({
+  anamnesis: { type: String, required: true },
+  tipo: { type: String, required: true },
+  pie: { type: String, required: true },
+  paciente: {
     type: Schema.Types.ObjectId,
-    ref: "user",
+    ref: "paciente",
     required: true,
     autopopulate: true
   },
-  comments: [
+  visitas: [
     {
       type: Schema.Types.ObjectId,
-      ref: "comment",
+      ref: "visita",
       required: true,
       autopopulate: true
     }
@@ -23,4 +22,4 @@ const IdeaSchema = new Schema({
 });
 
 IdeaSchema.plugin(require("mongoose-autopopulate"));
-module.exports = mongoose.model("idea", IdeaSchema);
+module.exports = mongoose.model("protesis", ProtesisSchema);

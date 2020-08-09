@@ -3,8 +3,12 @@ const { Schema } = mongoose;
 const { compareSync, hashSync, genSaltSync } = require("bcryptjs");
 
 const UserSchema = new Schema({
-  name: { type: String, required: true },
-  username: { type: String, required: true },
+  nombre: { type: String, required: true },
+  apellido: {type: String, required: false},
+  email: { type: String, required: true },
+  telefono: {type: String, required: false},
+  direccion: {type: String, required: false},
+  cargo: {type: String, required: false},
   password: { type: String, required: true }
 });
 
