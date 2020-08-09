@@ -28,6 +28,11 @@ class PacienteController {
     const deletedpaciente = await _pacienteService.delete(pacienteId);
     return res.send(deletedpaciente);
   }
+  async createPaciente(req, res) {
+    const { body } = req;
+    const createdPaciente = await _visitaService.createVisita(body);
+    return res.status(201).send(createdPaciente);
+  }
 }
 
 module.exports = PacienteController;

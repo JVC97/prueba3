@@ -14,10 +14,8 @@ const PacienteSchema = new Schema({
       type: Schema.Types.ObjectId,
       ref: "protesis",
       required: true,
-      autopopulate: false
     }
   ]
 });
 
-IdeaSchema.plugin(require("mongoose-autopopulate"));
 module.exports = mongoose.model("paciente", PacienteSchema);

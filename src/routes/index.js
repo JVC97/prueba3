@@ -11,8 +11,9 @@ const swaggerDocument = require(SWAGGER_PATH);
 module.exports = function({
   HomeRoutes,
   UserRoutes,
-  IdeaRoutes,
-  CommentRoutes,
+  PacienteRoutes,
+  ProtesisRoutes,
+  VisitaRoutes,
   AuthRoutes
 }) {
   const router = express.Router();
@@ -26,8 +27,9 @@ module.exports = function({
 
   apiRoutes.use("/home", HomeRoutes);
   apiRoutes.use("/user", UserRoutes);
-  apiRoutes.use("/idea", IdeaRoutes);
-  apiRoutes.use("/comment", CommentRoutes);
+  apiRoutes.use("/paciente", PacienteRoutes);
+  apiRoutes.use("/protesis", ProtesisRoutes);
+  apiRoutes.use("/visita", VisitaRoutes);
   apiRoutes.use("/auth", AuthRoutes);
 
   router.use("/v1/api", apiRoutes);

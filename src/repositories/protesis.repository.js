@@ -7,8 +7,8 @@ class ProtesisRepository extends BaseRepository {
     _protesis = Protesis;
   }
 
-  async getUserProtesis(paciente) {
-    return await _protesis.find({ paciente });
+  async getUserProtesis(rut) {
+    return await _protesis.find(rut);
   }
 }
 

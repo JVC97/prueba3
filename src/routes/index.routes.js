@@ -1,7 +1,8 @@
 module.exports = {
   HomeRoutes: require("./home.routes"),
   UserRoutes: require("./user.routes"),
-  IdeaRoutes: require("./idea.routes"),
-  CommentRoutes: require("./comment.routes"),
+  PacienteRoutes: require("./paciente.routes"),
+  ProtesisRoutes: require("./protesis.routes"),
+  VisitaRoutes: require("./visita.routes"),
   AuthRoutes: require("./auth.routes")
 };

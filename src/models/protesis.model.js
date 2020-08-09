@@ -21,5 +21,5 @@ const ProtesisSchema = new Schema({
   ]
 });
 
-IdeaSchema.plugin(require("mongoose-autopopulate"));
+ProtesisSchema.plugin(require("mongoose-autopopulate"));
 module.exports = mongoose.model("protesis", ProtesisSchema);

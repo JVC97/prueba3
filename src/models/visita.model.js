@@ -13,5 +13,5 @@ const VisitaSchema = new Schema({
   }
 });
 
-CommentSchema.plugin(require("mongoose-autopopulate"));
+VisitaSchema.plugin(require("mongoose-autopopulate"));
 module.exports = mongoose.model("visita", VisitaSchema);

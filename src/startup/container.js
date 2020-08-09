@@ -28,8 +28,9 @@ const {
 const {
   HomeRoutes,
   UserRoutes,
-  IdeaRoutes,
-  CommentRoutes,
+  PacienteRoutes,
+  ProtesisRoutes,
+  VisitaRoutes,
   AuthRoutes
 } = require("../routes/index.routes");
 const Routes = require("../routes");
@@ -40,7 +41,7 @@ const { User, Paciente, Protesis,Visita } = require("../models");
 // repositories
 const {
   UserRepository,
-  PacienteRepositery,
+  PacienteRepository,
   ProtesisRepository,
   VisitaRepository
 } = require("../repositories");
@@ -72,8 +73,9 @@ container
   .register({
     HomeRoutes: asFunction(HomeRoutes).singleton(),
     UserRoutes: asFunction(UserRoutes).singleton(),
-    IdeaRoutes: asFunction(IdeaRoutes).singleton(),
-    CommentRoutes: asFunction(CommentRoutes).singleton(),
+    PacienteRoutes: asFunction(PacienteRoutes).singleton(),
+    ProtesisRoutes: asFunction(ProtesisRoutes).singleton(),
+    VisitaRoutes: asFunction(VisitaRoutes).singleton(),
     AuthRoutes: asFunction(AuthRoutes).singleton()
   })
   .register({
@@ -84,7 +86,7 @@ container
   })
   .register({
     UserRepository: asClass(UserRepository).singleton(),
-    PacienteRepositery: asClass(PacienteRepositery).singleton(),
+    PacienteRepository: asClass(PacienteRepository).singleton(),
     ProtesisRepository: asClass(ProtesisRepository).singleton(),
     VisitaRepository: asClass(VisitaRepository).singleton()
   });
