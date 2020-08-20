@@ -7,7 +7,7 @@ module.exports = function({ ProtesisController }) {
   router.get("", [ParseIntMiddleware], ProtesisController.getAll);
   router.get("/:protesisId", ProtesisController.get);
   router.get("/:pacienteId/all", ProtesisController.getPacienteProtesis);
-  router.post("", ProtesisController.create);
+  router.post("/createprotesis", ProtesisController.create);
   router.patch("/:protesisId", AuthMiddleware, ProtesisController.update);
   router.delete("/:protesisId", AuthMiddleware, ProtesisController.delete);
 

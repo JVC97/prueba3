@@ -11,7 +11,11 @@ const VisitaSchema = new Schema({
     required: true,
     autopopulate: true
   }
-});
+},{
+  _id:false,
+  versionKey:false
+}
+);
 
 VisitaSchema.plugin(require("mongoose-autopopulate"));
 module.exports = mongoose.model("visita", VisitaSchema);

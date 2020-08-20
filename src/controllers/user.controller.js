@@ -28,6 +28,7 @@ class UserController {
     const deletedUser = await _userService.delete(userId);
     return res.send(deletedUser);
   }
+
 }
 
 module.exports = UserController;

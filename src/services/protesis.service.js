@@ -17,6 +17,7 @@ class ProtesisService extends BaseService {
 
     return await _protesisRepository.getPacienteProtesis(author);
   }
+
 }
 
 module.exports = ProtesisService;

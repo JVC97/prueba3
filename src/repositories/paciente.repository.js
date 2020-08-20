@@ -7,8 +7,8 @@ class PacienteRepository extends BaseRepository {
     _paciente = Paciente;
   }
 
-  async getPacientes(rut) {
-    return await _paciente.findOne(rut);
+  async getPacienteByRut(rut) {
+    return await _paciente.findOne({rut});
   }
 }
 

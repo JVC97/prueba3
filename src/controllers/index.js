@@ -4,5 +4,6 @@ module.exports = {
   PacienteController: require("./paciente.controller"),
   ProtesisController: require("./protesis.controller"),
   VisitaController: require("./visita.controller"),
-  AuthController: require("./auth.controller")
+  AuthController: require("./auth.controller"),
+  OrdenCompraController: require("./ordenCompra.controller")
 };

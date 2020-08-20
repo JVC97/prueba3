@@ -30,8 +30,15 @@ class PacienteController {
   }
   async createPaciente(req, res) {
     const { body } = req;
-    const createdPaciente = await _visitaService.createVisita(body);
+    const createdPaciente = await _pacienteService.createPaciente(body);
     return res.status(201).send(createdPaciente);
+  }
+
+  async getpaciente(req, res){
+    const { rut } = req.params;
+    const paciente = await _pacienteService.getPacienteByRut(rut);
+    return res.send(paciente);
+    
   }
 }
 

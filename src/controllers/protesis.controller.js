@@ -39,8 +39,8 @@ class ProtesisController {
 
   async getPacienteProtesis(req, res) {
     const { pacienteId } = req.params;
-    const protesiss = await _protesisService.getPacienteProtesis(pacienteId);
-    return res.send(protesiss);
+    const protesis = await _protesisService.getPacienteProtesis(pacienteId);
+    return res.send(protesis);
   }
 }
 

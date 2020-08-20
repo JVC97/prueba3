@@ -4,5 +4,6 @@ module.exports = {
   PacienteService: require("./paciente.service"),
   ProtesisService: require("./protesis.service"),
   VisitaService: require("./visita.service"),
-  AuthService: require("./auth.service")
+  AuthService: require("./auth.service"),
+  OrdenCompraService: require("./ordenCompra.service")
 };

@@ -8,18 +8,24 @@ const ProtesisSchema = new Schema({
   paciente: {
     type: Schema.Types.ObjectId,
     ref: "paciente",
-    required: true,
+    required: false,
     autopopulate: true
   },
   visitas: [
     {
       type: Schema.Types.ObjectId,
       ref: "visita",
-      required: true,
+      required: false,
       autopopulate: true
     }
-  ]
-});
+  ],
+  ordenCompra:{
+    type: Schema.Types.ObjectId,
+    ref: "ordenCompra",
+    required:true
+  }
+},
+);
 
 ProtesisSchema.plugin(require("mongoose-autopopulate"));
 module.exports = mongoose.model("protesis", ProtesisSchema);

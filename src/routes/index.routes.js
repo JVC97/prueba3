@@ -4,5 +4,6 @@ module.exports = {
   PacienteRoutes: require("./paciente.routes"),
   ProtesisRoutes: require("./protesis.routes"),
   VisitaRoutes: require("./visita.routes"),
-  AuthRoutes: require("./auth.routes")
+  AuthRoutes: require("./auth.routes"),
+  OrdenCompraRoutes: require("./ordenCompra.routes")
 };

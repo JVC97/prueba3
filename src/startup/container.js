@@ -11,7 +11,8 @@ const {
   PacienteService,
   ProtesisService,
   VisitaService,
-  AuthService
+  AuthService,
+  OrdenCompraService
 } = require("../services");
 
 // controllers
@@ -21,7 +22,8 @@ const {
   PacienteController,
   ProtesisController,
   VisitaController,
-  AuthController
+  AuthController,
+  OrdenCompraController
 } = require("../controllers");
 
 // routes
@@ -31,20 +33,23 @@ const {
   PacienteRoutes,
   ProtesisRoutes,
   VisitaRoutes,
-  AuthRoutes
+  AuthRoutes,
+  OrdenCompraRoutes
 } = require("../routes/index.routes");
 const Routes = require("../routes");
 
 // models
-const { User, Paciente, Protesis,Visita } = require("../models");
+const { User, Paciente, Protesis,Visita, OrdenCompra } = require("../models");
 
 // repositories
 const {
   UserRepository,
   PacienteRepository,
   ProtesisRepository,
-  VisitaRepository
+  VisitaRepository,
+  OrdenCompraRepository
 } = require("../repositories");
+const OrdenCompraControllers = require("../controllers/ordenCompra.controller");
 
 const container = createContainer();
 
@@ -60,7 +65,8 @@ container
     PacienteService: asClass(PacienteService).singleton(),
     ProtesisService: asClass(ProtesisService).singleton(),
     VisitaService: asClass(VisitaService).singleton(),
-    AuthService: asClass(AuthService).singleton()
+    AuthService: asClass(AuthService).singleton(),
+    OrdenCompraService: asClass(OrdenCompraService).singleton()
   })
   .register({
     HomeController: asClass(HomeController.bind(HomeController)).singleton(),
@@ -68,7 +74,8 @@ container
     PacienteController: asClass(PacienteController.bind(PacienteController)).singleton(),
     AuthController: asClass(AuthController.bind(AuthController)).singleton(),
     ProtesisController: asClass(ProtesisController.bind(ProtesisController)).singleton(),
-    VisitaController: asClass(VisitaController.bind(VisitaController)).singleton()
+    VisitaController: asClass(VisitaController.bind(VisitaController)).singleton(),
+    OrdenCompraController: asClass(OrdenCompraControllers.bind(OrdenCompraController)).singleton()
   })
   .register({
     HomeRoutes: asFunction(HomeRoutes).singleton(),
@@ -76,19 +83,22 @@ container
     PacienteRoutes: asFunction(PacienteRoutes).singleton(),
     ProtesisRoutes: asFunction(ProtesisRoutes).singleton(),
     VisitaRoutes: asFunction(VisitaRoutes).singleton(),
-    AuthRoutes: asFunction(AuthRoutes).singleton()
+    AuthRoutes: asFunction(AuthRoutes).singleton(),
+    OrdenCompraRoutes: asFunction(OrdenCompraRoutes).singleton()
   })
   .register({
     User: asValue(User),
     Paciente: asValue(Paciente),
     Protesis: asValue(Protesis),
-    Visita: asValue(Visita)
+    Visita: asValue(Visita),
+    OrdenCompra: asValue(OrdenCompra)
   })
   .register({
     UserRepository: asClass(UserRepository).singleton(),
     PacienteRepository: asClass(PacienteRepository).singleton(),
     ProtesisRepository: asClass(ProtesisRepository).singleton(),
-    VisitaRepository: asClass(VisitaRepository).singleton()
+    VisitaRepository: asClass(VisitaRepository).singleton(),
+    OrdenCompraRepository: asClass(OrdenCompraRepository).singleton()
   });
 
 module.exports = container;
